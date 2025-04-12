@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
+    <title>Add Product</title>
+</head>
+<body>
+    <form [formGroup]="form" (ngSubmit)="submit();">
+        <label for="">Title</label>
+        <input type="text" formControlName="title">
+    
+        <label for="">Description</label>
+        <textarea formControlName="description"></textarea>
+        <label for="">Category</label>
+        <select formControlName="category">
+            <option value="" selected disabled>Please select</option>
+            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+        </select>
+        <button>Login</button>
+    </form>
+</body>
+</html>
+

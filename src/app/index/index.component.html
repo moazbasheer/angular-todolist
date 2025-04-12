@@ -1,0 +1,26 @@
+<p>index works!</p>
+<a href="/add-product">Add Product</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.category}}</td>
+            <td>
+                <a [href]="'/edit-product/' + product.id">update</a>
+                <button (click)="delete_product(product.id);">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="logout();">Logout</button>
